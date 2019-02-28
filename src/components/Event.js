@@ -82,8 +82,7 @@ class Event extends React.Component {
 							<h2 className="heading--secondary"><u className="heading">Rules</u></h2>
 							<ul>
 								{eventDetails.rules.map(rule => (
-									<li key={rule} className="event__rule">
-										{rule}
+									<li key={rule} className="event__rule" dangerouslySetInnerHTML={{__html: rule}}>
 									</li>
 								))}
 							</ul>
