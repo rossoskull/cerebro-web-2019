@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { registerForEvent, unregisterFromEvent } from '../actions/eventActions';
 import SignIn from './SignIn';
 import Loaderx from './Loader';
+import ReactHtmlParser from 'react-html-parser';
 
 class Event extends React.Component {
 
@@ -82,7 +83,8 @@ class Event extends React.Component {
 							<h2 className="heading--secondary"><u className="heading">Rules</u></h2>
 							<ul>
 								{eventDetails.rules.map(rule => (
-									<li key={rule} className="event__rule" dangerouslySetInnerHTML={{__html: rule}}>
+									<li key={rule} className="event__rule">
+										{ ReactHtmlParser(rule) }
 									</li>
 								))}
 							</ul>
